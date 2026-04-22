@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMBIT Admission Enquiry | New Enquiry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-page">
+    <aside class="sidebar">
+      <div class="logo-block">
+        <div class="logo">AMB</div>
+        <div>
+          <p class="logo-title">AMB Institute</p>
+          <p class="logo-sub">Admission Enquiry System</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" href="dashboard.html"><span>Dashboard</span></a>
+        <a class="nav-item active" href="enquiry.html"><span>Enquiry Form</span></a>
+        <a class="nav-item" href="#"><span>Applications</span></a>
+        <a class="nav-item" href="#"><span>Reports</span></a>
+        <a class="nav-item" href="#"><span>Export Data</span></a>
+        <a class="nav-item" href="#"><span>Users</span></a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <p class="section-title">BE Admission Enquiry Form</p>
+        <div class="topbar-right">
+          <a href="dashboard.html" class="small-btn">Back to Dashboard</a>
+          <button id="logoutBtn" class="btn-secondary logout-small" type="button">Logout</button>
+        </div>
+      </header>
+
+      <article class="card form-card">
+        <form id="enquiryForm" class="enquiry-grid" novalidate>
+          <div class="field-group wide">
+            <label for="candidateName">Candidate Name</label>
+            <input id="candidateName" name="candidateName" required>
+          </div>
+          <div class="field-group">
+            <label for="fatherName">Father Name</label>
+            <input id="fatherName" name="fatherName" required>
+          </div>
+          <div class="field-group">
+            <label for="motherName">Mother Name</label>
+            <input id="motherName" name="motherName" required>
+          </div>
+          <div class="field-group">
+            <label for="fatherOccupation">Father Occupation</label>
+            <input id="fatherOccupation" name="fatherOccupation">
+          </div>
+          <div class="field-group">
+            <label for="motherOccupation">Mother Occupation</label>
+            <input id="motherOccupation" name="motherOccupation">
+          </div>
+          <div class="field-group">
+            <label for="contactNo">Contact No</label>
+            <input id="contactNo" name="contactNo" required>
+          </div>
+          <div class="field-group">
+            <label for="alternateContactNo">Alternate Contact No</label>
+            <input id="alternateContactNo" name="alternateContactNo">
+          </div>
+          <div class="field-group">
+            <label for="pucPercent">PUC %</label>
+            <input id="pucPercent" name="pucPercent" type="number" step="0.01" min="0" max="100" required>
+          </div>
+          <div class="field-group">
+            <label for="examType">CET/COMEDK Written</label>
+            <select id="examType" name="examType" required>
+              <option value="">Select</option>
+              <option value="CET">CET</option>
+              <option value="COMEDK">COMEDK</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="hostelRequired">Hostel Required</label>
+            <select id="hostelRequired" name="hostelRequired">
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select</option>
+              <option value="GM">GM</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+              <option value="OBC">OBC</option>
+              <option value="CAT-1">CAT-1</option>
+              <option value="2A">2A</option>
+              <option value="2B">2B</option>
+              <option value="3A">3A</option>
+              <option value="3B">3B</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="examRank">CET/COMEDK Rank</label>
+            <input id="examRank" name="examRank">
+          </div>
+          <div class="field-group">
+            <label for="interestedCourse1">Interested Course 1</label>
+            <select id="interestedCourse1" name="interestedCourse1" required>
+              <option value="">Select</option>
+              <option value="CSE">CSE</option>
+              <option value="ECE">ECE</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Civil">Civil</option>
+              <option value="EEE">EEE</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="interestedCourse2">Interested Course 2</label>
+            <select id="interestedCourse2" name="interestedCourse2">
+              <option value="">Select</option>
+              <option value="CSE">CSE</option>
+              <option value="ECE">ECE</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Civil">Civil</option>
+              <option value="EEE">EEE</option>
+            </select>
+          </div>
+          <div class="field-group wide">
+            <label for="pucCollegeNamePlace">PU College Name & Place</label>
+            <input id="pucCollegeNamePlace" name="pucCollegeNamePlace" required>
+          </div>
+          <div class="field-group wide">
+            <label for="postalAddress">Postal Address</label>
+            <textarea id="postalAddress" name="postalAddress" rows="3" required></textarea>
+          </div>
+          <div class="actions wide">
+            <button type="submit" class="btn-primary">Submit Enquiry</button>
+            <a href="dashboard.html" class="small-btn">Cancel</a>
+          </div>
+          <p id="enquiryMessage" class="form-message wide" role="alert"></p>
+        </form>
+      </article>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

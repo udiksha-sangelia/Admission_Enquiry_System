@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMBIT Admission Enquiry | Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>Anuvartik Mirji Bharatesh Institute of Technology</h1>
+      <p>Admission Enquiry System</p>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <section class="login-card">
+      <div class="login-title-block">
+        <h2>Login</h2>
+      </div>
+
+      <form id="loginForm" class="login-form" novalidate>
+        <div class="field-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" placeholder="Enter username" required>
+        </div>
+
+        <div class="field-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter password" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Sign In</button>
+        <p id="message" class="form-message" role="alert"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMBIT Admission Enquiry | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-page">
+    <aside class="sidebar">
+      <div class="logo-block">
+        <div class="logo">AMB</div>
+        <div>
+          <p class="logo-title">AMB Institute</p>
+          <p class="logo-sub">Admission Enquiry System</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item active" href="dashboard.html"><span>Dashboard</span></a>
+        <a class="nav-item" href="enquiry.html"><span>Enquiry Form</span></a>
+        <a class="nav-item" href="#"><span>Applications</span></a>
+        <a class="nav-item" href="#"><span>Reports</span></a>
+        <a class="nav-item" href="#"><span>Export Data</span></a>
+        <a class="nav-item" href="#"><span>Notifications</span><span class="badge">3</span></a>
+        <a class="nav-item" href="#"><span>Users</span></a>
+        <a class="nav-item" href="#"><span>Settings</span></a>
+      </nav>
+
+      <div class="quick-access">
+        <p class="quick-title">Quick Access</p>
+        <a href="enquiry.html" class="quick-btn primary quick-link">+ New Enquiry</a>
+        <button type="button" class="quick-btn">View All Applications</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="icon-btn" type="button">☰</button>
+        <div class="topbar-right">
+          <button class="icon-btn bell" type="button">🔔<span>1</span></button>
+          <button class="date-btn" type="button">22 May 2025</button>
+          <div class="user-btn"><span id="welcomeHeading">Admin</span></div>
+          <button id="logoutBtn" class="btn-secondary logout-small" type="button">Logout</button>
+        </div>
+      </header>
+
+      <section>
+        <h1 class="page-title">Dashboard</h1>
+        <p class="subtitle">Welcome back, Admin! Here's what's happening today.</p>
+      </section>
+
+      <section class="kpi-grid" id="kpiGrid"></section>
+
+      <section class="content-grid">
+        <div class="left-column">
+          <article class="card">
+            <div class="section-head">
+              <h2>Recent Applications</h2>
+              <button type="button" class="small-btn">View All</button>
+            </div>
+            <table class="app-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Course</th>
+                  <th>CET/COMEDK</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="applicationsBody"></tbody>
+            </table>
+          </article>
+
+          <article class="card">
+            <h2>Search & Filters</h2>
+            <div class="filter-row">
+              <input id="searchInput" placeholder="Search by name or contact...">
+              <select id="courseFilter">
+                <option>All Courses</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>Mechanical</option>
+                <option>Civil</option>
+              </select>
+              <select>
+                <option>All Categories</option>
+                <option>GM</option>
+                <option>OBC</option>
+                <option>SC</option>
+                <option>ST</option>
+              </select>
+              <select>
+                <option>All</option>
+                <option>CET</option>
+                <option>COMEDK</option>
+              </select>
+              <select id="statusFilter">
+                <option>All</option>
+                <option>Pending</option>
+                <option>Approved</option>
+                <option>Rejected</option>
+              </select>
+              <button class="small-btn filled" type="button">Filter</button>
+              <button class="small-btn" type="button" id="resetFilters">Reset</button>
+            </div>
+          </article>
+
+          <article class="bottom-grid">
+            <div class="card payment-card">
+              <h2>Payment Overview</h2>
+              <div class="payment-values">
+                <div>
+                  <p>Total Advance Collected</p>
+                  <h3 id="advanceCollected">-</h3>
+                </div>
+                <div>
+                  <p>Pending Amount</p>
+                  <h3 id="pendingAmount">-</h3>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h2>Top Categories</h2>
+              <div id="topCategories"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="right-column">
+          <article class="card">
+            <h2>Application Status Overview</h2>
+            <p class="placeholder-note">Graph removed as requested. Status values are shown below.</p>
+            <p class="list-line"><span>Pending</span><span>74 (25.9%)</span></p>
+            <p class="list-line"><span>Approved</span><span>102 (35.7%)</span></p>
+            <p class="list-line"><span>Rejected</span><span>28 (9.8%)</span></p>
+            <p class="list-line"><span>In Process</span><span>82 (28.6%)</span></p>
+          </article>
+
+          <article class="card">
+            <h2>Course-wise Applications</h2>
+            <p class="placeholder-note">Graph removed. Course totals listed below.</p>
+            <p class="list-line"><span>CSE</span><span>96</span></p>
+            <p class="list-line"><span>ECE</span><span>68</span></p>
+            <p class="list-line"><span>Mechanical</span><span>45</span></p>
+            <p class="list-line"><span>Civil</span><span>38</span></p>
+            <p class="list-line"><span>Other</span><span>39</span></p>
+          </article>
+
+          <article class="card">
+            <h2>Hostel Requirement</h2>
+            <p class="list-line"><span>Yes</span><span id="hostelYes">-</span></p>
+            <p class="list-line"><span>No</span><span id="hostelNo">-</span></p>
+            <p class="list-line total"><span>Total</span><span id="hostelTotal">-</span></p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
