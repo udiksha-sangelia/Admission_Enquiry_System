@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMBIT Admission Enquiry | Payment Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-page">
+    <aside class="sidebar">
+      <div class="logo-block">
+        <div class="logo">AMB</div>
+        <div>
+          <p class="logo-title">AMB Institute</p>
+          <p class="logo-sub">Admission Enquiry System</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" href="dashboard.html"><span>Dashboard</span></a>
+        <a class="nav-item" href="enquiry.html"><span>Enquiry Form</span></a>
+        <a class="nav-item active" href="payment.html"><span>Payment Details</span></a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <p class="section-title">Advance Amount Paid Details</p>
+        <div class="topbar-right">
+          <a href="dashboard.html" class="small-btn">Back to Dashboard</a>
+          <button id="logoutBtn" class="btn-secondary logout-small" type="button">Logout</button>
+        </div>
+      </header>
+
+      <article class="card form-card">
+        <form id="paymentForm" class="enquiry-grid" novalidate>
+          <div class="field-group">
+            <label for="paymentSerialNo">Serial Number</label>
+            <input id="paymentSerialNo" name="paymentSerialNo" readonly>
+          </div>
+          <div class="field-group">
+            <label for="candidateName">Candidate Name</label>
+            <input id="candidateName" name="candidateName" readonly>
+          </div>
+          <div class="field-group">
+            <label for="guardianName">Parent / Guardian Name</label>
+            <input id="guardianName" name="guardianName" readonly>
+          </div>
+          <div class="field-group">
+            <label for="admittedBranch">Admitted Branch</label>
+            <input id="admittedBranch" name="admittedBranch" readonly>
+          </div>
+          <div class="field-group">
+            <label for="dateOfAdmission">Date of Admission</label>
+            <input id="dateOfAdmission" name="dateOfAdmission" type="date" required>
+          </div>
+          <div class="field-group">
+            <label for="receiptNumber">Receipt Number</label>
+            <input id="receiptNumber" name="receiptNumber" required>
+          </div>
+
+          <div class="field-group">
+            <label for="agreedAmount">Agreed Amount</label>
+            <input id="agreedAmount" name="agreedAmount" type="number" min="0" required>
+          </div>
+          <div class="field-group">
+            <label for="paidAmount">Paid (minimum 25k)</label>
+            <input id="paidAmount" name="paidAmount" type="number" min="0" required>
+          </div>
+          <div class="field-group">
+            <label for="balanceAmount">Balance</label>
+            <input id="balanceAmount" name="balanceAmount" type="number" min="0" readonly>
+          </div>
+          <div class="field-group">
+            <label for="balanceDueDate">Balance will be paid on/before</label>
+            <input id="balanceDueDate" name="balanceDueDate" type="date" required>
+          </div>
+
+          <div class="field-group">
+            <label for="modeOfPayment">Mode of Payment</label>
+            <select id="modeOfPayment" name="modeOfPayment" required>
+              <option value="">Select</option>
+              <option value="Cash">Cash</option>
+              <option value="Demand Draft">Demand Draft</option>
+            </select>
+          </div>
+          <div class="field-group wide">
+            <label for="paymentImage">Upload Payment Image</label>
+            <input id="paymentImage" name="paymentImage" type="file" accept="image/*">
+          </div>
+          <div class="field-group wide">
+            <label>Uploaded Image Preview</label>
+            <img id="paymentImagePreview" class="payment-preview hidden" alt="Payment proof preview">
+          </div>
+
+          <div class="field-group">
+            <label for="tuitionFees">Tuition Fees</label>
+            <input id="tuitionFees" name="tuitionFees" type="number" min="0" value="0">
+          </div>
+          <div class="field-group">
+            <label for="universityFees">University Fees</label>
+            <input id="universityFees" name="universityFees" type="number" min="0" value="0">
+          </div>
+          <div class="field-group">
+            <label for="transportFees">Transport Fees</label>
+            <input id="transportFees" name="transportFees" type="number" min="0" value="0">
+          </div>
+          <div class="field-group">
+            <label for="hostelFees">Hostel Fees</label>
+            <input id="hostelFees" name="hostelFees" type="number" min="0" value="0">
+          </div>
+          <div class="field-group">
+            <label for="sportsFees">Sports Fees</label>
+            <input id="sportsFees" name="sportsFees" type="number" min="0" value="0">
+          </div>
+          <div class="field-group">
+            <label for="libraryFees">Library Fees</label>
+            <input id="libraryFees" name="libraryFees" type="number" min="0" value="0">
+          </div>
+
+          <div class="field-group wide">
+            <label for="installments">Installments</label>
+            <textarea id="installments" name="installments" rows="3" placeholder="Example: 1st installment 25000 on 2026-04-25"></textarea>
+          </div>
+
+          <div class="actions wide">
+            <button type="submit" class="btn-primary">Save Payment Details</button>
+            <button type="button" id="printPaymentBtn" class="small-btn hidden">Print PDF</button>
+            <a href="dashboard.html" class="small-btn">Cancel</a>
+          </div>
+          <p id="paymentMessage" class="form-message wide" role="alert"></p>
+        </form>
+      </article>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
